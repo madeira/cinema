@@ -1,0 +1,64 @@
+@import "../variables.scss";
+
+.MovieList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.MovieListItem {
+    color: $text-color;
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 25px 0;
+    transition: background .5s;
+    margin-bottom: 10px;
+    min-width: 25%;
+    max-width: 25%;
+
+    &:hover {
+        background: #e6e3e3;
+    }
+
+    @include tablet {
+        min-width: 33%;
+    }
+
+    @include no-tablet {
+        min-width: 50%;
+    }
+
+    @include mobile {
+        min-width: 100%;
+    }
+}
+
+.MovieListItem-ImgHolder {
+    position: relative;
+    width: 200px;
+    overflow: hidden;
+    flex: 1 0 auto;
+    padding: 0 0 10px;
+}
+
+.MovieListItem-Img {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.MovieListItem-Title {
+    max-width: 200px;
+    flex-shrink: 0;
+}

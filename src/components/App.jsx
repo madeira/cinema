@@ -3,14 +3,13 @@ import React from 'react';
 import { Footer } from ".";
 import { Header } from ".";
 import { MainContainer } from '../routes';
-import '../style/App.css';
 
 export const App = () => {
   return (
-    <div>
+    <React.Fragment>
       <Header/>
       <MainContainer/>
       <Footer/>
-    </div>
+    </React.Fragment>
   );
 }

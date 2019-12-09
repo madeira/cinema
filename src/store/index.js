@@ -9,5 +9,3 @@ const composeEnchanser = (window && window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 
 export const store = createStore(rootReduser, composeEnchanser(applyMiddleware(thunk)));
 export const history = createBrowserHistory();
-
-

@@ -1,0 +1,19 @@
+@import "../variables.scss";
+
+.Search {
+    width: 50%;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    padding: $padding*2 $padding*4;
+    margin: 0 auto;
+    display: block;
+}
+
+.FilterHolder {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: $padding*3;
+    box-sizing: border-box; 
+}

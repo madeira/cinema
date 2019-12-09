@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 
-import './style/index.css';
 import { App } from './components';
 import { store, history } from './store';
+
+import './main.scss';
 
 
 ReactDOM.render(

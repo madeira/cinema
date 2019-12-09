@@ -1,12 +1,12 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Switch, Route} from 'react-router-dom';
 
 import { getMovies } from '../actions';
-import { MainPageContainer, MovieContainer } from '../containers';
+import { MainPageContainer, MovieContainer, SheduleContainer } from '../containers';
 
 
-export class Main extends React.Component {
+export class Main extends Component {
     
     componentDidMount(){
         this.props.getMovies();
@@ -14,10 +14,18 @@ export class Main extends React.Component {
 
     render() {
         return (
-            <Switch>
-                <Route path={"/"} exact component={MainPageContainer}/>
-                <Route path={"/movie/:id"} component={MovieContainer}/>
-            </Switch>
+            <React.Fragment>
+                {( 
+                    <Switch>
+                        <Route path={"/"} exact component={MainPageContainer}/>
+                        <Route path={"/movie/:id"} component={MovieContainer}/>
+                        <Route path={"/shedule"} component={SheduleContainer}/>
+                    </Switch>
+                )}
+                
+                
+            </React.Fragment>
+            
         );
     }
 }

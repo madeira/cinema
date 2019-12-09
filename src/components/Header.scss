@@ -1,0 +1,39 @@
+@import "../variables.scss";
+
+.Logo {
+    width: 50px;
+    height: 50px;
+    background: red;
+}
+
+.Header {
+    background: rgb(63, 62, 94);
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    height: 50px;
+    margin-bottom: $margin*2;
+}
+
+.HeaderNav {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.HeaderNav-Item {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 $margin*2;
+    padding: $padding*2 0;
+    border-bottom: 3px solid transparent;
+    transition: border .3s;
+
+    &:hover {
+        border-bottom: 3px solid #fff;
+    }
+}
+
+.HeaderNav-Item__active {
+    border-bottom: 3px solid #fff;
+}

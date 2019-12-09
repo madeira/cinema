@@ -1,19 +1,12 @@
 import axios from 'axios';
 
-import { MOVIES_URL, SET_MOVIES, IS_LOADING, FAIL_LOADING } from '../constants';
+import { MOVIES_URL, SET_MOVIES } from '../constants';
+import {isLoading, loadingFail} from './general'
 
-
-export const isLoading = () => ({
-    type: IS_LOADING,
-});
 
 export const setMovies = (movies) => ({
     type: SET_MOVIES,
     payload: movies
-});
-
-export const faleLoading = () => ({
-    type: FAIL_LOADING
 });
 
 export const getMovies = () => {
@@ -24,8 +17,8 @@ export const getMovies = () => {
                 dispatch(setMovies(data.movie));
             })
             .catch((error) => {
-                dispatch(faleLoading());
+                dispatch(loadingFail());
                 console.error(error)
             });
     }
-}
+};
