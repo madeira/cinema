@@ -15,6 +15,7 @@ class Shedule extends React.Component {
 
     getSessions = () => {
         const { movies, sessions, rooms } = this.props;
+        
         const sessionsArr = movies.length && sessions.length && rooms.length
             ? sessions.map(item => {
                 return item.map(elem => ({
@@ -24,7 +25,10 @@ class Shedule extends React.Component {
                 }));
             })
             : [];
-        return sessionsArr.map(item => item.filter(elem => elem.movie));
+
+        return sessionsArr.map(item => {
+            return item.filter(elem => elem.movies);
+        });
     };
 
     render() {
@@ -33,13 +37,13 @@ class Shedule extends React.Component {
         if (isLoading){
             return "loading..."
         }
-        console.log(this.getSessions());
+
         return (
             <div className="Shedule">
                 {
                     this.getSessions().map((item, i) => (
-                        <div key={i}>
-                            <h2>{ new Date(item[0].date).toLocaleDateString("ru", dateOptions)}</h2>
+                        <div className="DateBlock" key={i}>
+                            <h2 className="DateBlock-Heading">{ new Date(item[0].date).toLocaleDateString("ru", dateOptions)}</h2>
                             <SessionsBlock moviesOnDate={item} />
                         </div>
                     ))

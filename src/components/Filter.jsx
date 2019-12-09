@@ -40,13 +40,21 @@ export const Filter = ({movies, genres, setFilteredMovies}) => {
         setFilteredMovies(getFilteredMovies(valueInput, value));
     }
 
+    const resetFields = (e) => {
+        const value = "";
+        setValueInput(value);
+        setFilteredMovies(getFilteredMovies(value, valueSelect));
+        setValueSelect(value);
+        setFilteredMovies(getFilteredMovies(valueInput, value));
+    }
+
     return(
         <div className="FilterHolder">
-            <select onChange={handleChangeSelect}>
+            <select className="Filter" onChange={handleChangeSelect}>
                 {genres.map((item, i) => 
                     <option key={i} value={item}>{item}</option>
                 )}
-                
+                <option value="Сброс фильтра">Сброс фильтра</option> 
             </select>
 
             <input 
@@ -56,6 +64,8 @@ export const Filter = ({movies, genres, setFilteredMovies}) => {
                 onChange={handleChangeInput}
                 placeholder="Поиск по названию ..."
                 value = {valueInput}/>
+
+            <button className="Reset" onClick={resetFields}>Очистить</button>
         </div>
     )
 };

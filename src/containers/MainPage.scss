@@ -5,8 +5,9 @@
     border: 2px solid #ccc;
     font-size: 18px;
     padding: $padding*2 $padding*4;
-    margin: 0 auto;
     display: block;
+    border-radius: 5px;
+    margin-right: $margin*2;
 }
 
 .FilterHolder {
@@ -16,4 +17,19 @@
     justify-content: center;
     padding: $padding*3;
     box-sizing: border-box; 
+}
+
+.Filter {
+    width: 25%;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    padding: $padding*2 $padding*4;
+    display: block;
+    margin-right: $margin*2;
+}
+
+.Reset {
+    border: 2px solid #ccc;
+    font-size: 18px;
+    border-radius: 5px;
 }

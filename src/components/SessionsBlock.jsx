@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { MovieSession } from "./MovieSession";
+import "./SessionsBlock.scss";
+
 export const SessionsBlock = ({moviesOnDate}) => {
+    console.log("moviesOnDate", moviesOnDate);
     return (
         moviesOnDate.map((elem) => (
-            <div key={ elem._id }>
-                <div>Movie {elem._id }</div>
-            </div>
+            <MovieSession key={ elem._id } session={ elem } />
         ))
     )
 }
