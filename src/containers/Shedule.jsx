@@ -14,15 +14,17 @@ class Shedule extends React.Component {
     }
 
     getSessions = () => {
-        const {movies, sessions, rooms} = this.props;
-        
-        return false ? sessions.map(item => {
-            return item.map(elem => ({
-                ...elem,
-                room: rooms.find(room => room._id === elem.room).name,
-                movie: movies.find(movie => movie._id === elem.movie)
-            }));
-        }) : [];
+        const { movies, sessions, rooms } = this.props;
+        const sessionsArr = movies.length && sessions.length && rooms.length
+            ? sessions.map(item => {
+                return item.map(elem => ({
+                    ...elem,
+                    room: rooms.find(room => room._id === elem.room).name,
+                    movies: movies.find(movie => movie._id === elem.movie)
+                }));
+            })
+            : [];
+        return sessionsArr.map(item => item.filter(elem => elem.movie));
     };
 
     render() {
@@ -31,7 +33,7 @@ class Shedule extends React.Component {
         if (isLoading){
             return "loading..."
         }
-
+        console.log(this.getSessions());
         return (
             <div className="Shedule">
                 {

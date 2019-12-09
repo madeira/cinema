@@ -43,9 +43,11 @@ export const data = (state = InitialValues, action) => {
                     acc.push([])
                 };
 
+                console.log(item);
                 const lastElement = acc[acc.length-1];
                 const lastElementDate = lastElement.length ? lastElement[0].date.split("T")[0] : null;
                 const itemDate = item.date.split("T")[0];
+                console.log(itemDate);
                 const differentDates = +new Date(lastElementDate) !== +new Date(itemDate);
 
                 if (lastElement.length && differentDates){

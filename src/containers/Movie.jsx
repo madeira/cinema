@@ -42,7 +42,6 @@ class Movie extends Component {
                 <div className="Movie-Description">
                     <h1 className="Movie-Title">
                         { movie.title } 
-                        <time className="Movie-Date">({ movie.createdAt })</time>
                     </h1>
                     <ul className="GenreList">
                         { this.getItems(movie.genre, 'GenreList-Item') }
