@@ -6,3 +6,4 @@ export * from "./Filter";
 export * from "./SessionsBlock";
 export * from "./MovieSession";
 export * from "./Poster";
+export * from "./ModalByTicket";

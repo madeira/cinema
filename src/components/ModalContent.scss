@@ -1,0 +1,20 @@
+@import "../variables.scss";
+
+.Modal {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Modal-Content {
+    width: 50%;
+    background: #fff;
+    border-radius: 5px;
+    padding: $padding*2;
+}
