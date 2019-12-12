@@ -6,8 +6,8 @@ import { ModalByTicket } from "../components";
 export const MovieSession = ({session}) => {
     const [showModal, setShowModal] = useState(false);
 
-    const handleClickBy = () => {
-        setShowModal(true);
+    const toggleShowModal = () => {
+        setShowModal(!showModal);
     }
     
     return (
@@ -18,7 +18,7 @@ export const MovieSession = ({session}) => {
                         <Link to={`movie/${session.movies._id}`} className="Movie-ImgHolder">
                             <img className="Movie-Img" src={ session.movies.poster } alt="poster"/>
                         </Link>
-                        <button onClick={handleClickBy} className="Movie-ByTiket">Купить билет</button>
+                        <button onClick={toggleShowModal} className="Movie-ByTiket">Купить билет</button>
                     </div>
                 </div>
                 <div className="MovieSession-Holder">
@@ -29,7 +29,7 @@ export const MovieSession = ({session}) => {
                     </div>
                 </div>
             </div>
-            {showModal && <ModalByTicket sessionId={session._id}/>}
+            {showModal && <ModalByTicket session={session} handleCloseModal={toggleShowModal}/>}
         </React.Fragment>
     );
 };

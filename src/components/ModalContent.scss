@@ -16,5 +16,97 @@
     width: 50%;
     background: #fff;
     border-radius: 5px;
-    padding: $padding*2;
+    padding: $padding*4;
+    box-sizing: border-box;
+    max-height: 100%;
+    position: relative;
+}
+
+.Modal-Heading {
+    margin: 0;
+    font: 22px/1,3 'Roboto', Arial;
+    color: $text-color;
+    text-align: center;
+    margin-bottom: $margin;
+}
+
+.Modal-InfoHolder {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 $margin;
+}
+
+.Places {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Places-Row {
+    display: flex;
+    align-items: center;
+}
+
+.Places-RowLegend {
+    margin-right: $margin;
+    flex: 2 2 20%;
+    min-width: 50px;
+}
+
+.place {
+    display: flex;
+    flex: 1 1 10%;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    background: green;
+    margin: $margin/2;
+    cursor: pointer;
+    border-radius: 2px;
+
+
+    &:hover {
+        background: rgb(81, 184, 81);
+    }
+
+    &.booked {
+        background: rgb(143, 79, 5);
+        cursor: not-allowed;
+    }
+}
+
+.Modal-Close {
+    position: absolute;
+    right: $padding*4;
+    top: $padding*4;
+    cursor: pointer;
+}
+
+.Modal-Footer {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Form-Row {
+    display: flex;
+    align-items: center;
+    margin-bottom: $margin;
+}
+
+.Form-InputText {
+    width: 100%;
+    margin-left: $margin;
+    font-size: 18px;
+    padding: $padding $padding*2;
+}
+
+.MovieSession-Info_inModal {
+    width: 70%;
+    margin: 0 auto $margin*2;
+}
+
+.CongratsText {
+    text-align: center;
 }

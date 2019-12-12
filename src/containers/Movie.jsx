@@ -21,11 +21,7 @@ class Movie extends Component {
     getItems (itemType, classList){
         let items;
         if (itemType) {
-            items = itemType.map ((item, i) => {
-                if (item !== '') {
-                    return <li className={classList} key={i}>{item}</li>
-                }
-            });
+            items = itemType.map ((item, i) => <li className={classList} key={i}>{item}</li>);
         }
         return items;
     }

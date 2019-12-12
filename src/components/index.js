@@ -7,3 +7,5 @@ export * from "./SessionsBlock";
 export * from "./MovieSession";
 export * from "./Poster";
 export * from "./ModalByTicket";
+export * from "./Plases";
+export * from "./Form"

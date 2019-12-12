@@ -17,8 +17,9 @@ export class ModalByTicket extends React.Component {
     }
 
     render (){
+        const {session, handleCloseModal} = this.props;
         return ReactDom.createPortal(
-            <ModalContent sessionId={this.props.sessionId} />,
+            <ModalContent session={session} handleCloseModal={handleCloseModal}/>,
             this.root
         )
     }
